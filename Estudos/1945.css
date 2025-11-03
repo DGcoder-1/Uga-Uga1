@@ -1,0 +1,26 @@
+body{
+    background-color: red;
+}
+
+.Charlie{
+    display:flex;
+ 
+ height:600px;
+ align-items: center;
+ justify-content: center;
+}
+
+.Chaplin{
+    background-color:black;
+    height:100px;
+    width:100px;
+    
+
+}
+
+.Chaplin2{
+    background-color:black;
+    height:100px;
+    width:100px;
+    justify-content:space-between;
+}
