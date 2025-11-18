@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Evento</title>
+  <style>
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"], input[type="date"], input[type="time"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .checkbox-group, .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+    .checkbox-group label, .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<form id="eventoForm" novalidate>
+  <h2>Cadastro de Evento</h2>
+
+  <label for="nomeEvento">Nome do Evento: <span style="color:red">*</span></label>
+  <input type="text" id="nomeEvento" name="nomeEvento" required />
+
+  <label for="dataEvento">Data do Evento: <span style="color:red">*</span></label>
+  <input type="date" id="dataEvento" name="dataEvento" required min="" />
+
+  <label for="horaInicio">Horário de Início:</label>
+  <input type="time" id="horaInicio" name="horaInicio" />
+
+  <label for="horaTermino">Horário de Término:</label>
+  <input type="time" id="horaTermino" name="horaTermino" />
+
+  <label for="tipoEvento">Tipo de Evento:</label>
+  <select id="tipoEvento" name="tipoEvento">
+    <option value="Palestra">Palestra</option>
+    <option value="Oficina">Oficina</option>
+    <option value="Aula Extra">Aula Extra</option>
+    <option value="Reunião">Reunião</option>
+    <option value="Outro">Outro</option>
+  </select>
+
+  <label>Deseja certificação? <span style="color:red">*</span></label>
+  <div class="radio-group">
+    <label><input type="radio" name="certificacao" value="Sim" required /> Sim</label>
+    <label><input type="radio" name="certificacao" value="Não" /> Não</label>
+  </div>
+
+  <label>Áreas de interesse: <span style="color:red">*</span></label>
+  <div class="checkbox-group" id="areasInteresse">
+    <label><input type="checkbox" name="areas" value="Tecnologia" /> Tecnologia</label>
+    <label><input type="checkbox" name="areas" value="Saúde" /> Saúde</label>
+    <label><input type="checkbox" name="areas" value="Educação" /> Educação</label>
+    <label><input type="checkbox" name="areas" value="Artes" /> Artes</label>
+    <label><input type="checkbox" name="areas" value="Meio Ambiente" /> Meio Ambiente</label>
+  </div>
+  <div id="erroAreas" class="error" style="display:none;">Por favor, selecione ao menos uma área de interesse.</div>
+
+  <label for="cartaz">Anexar cartaz do evento (jpg, png ou pdf):</label>
+  <input type="file" id="cartaz" name="cartaz" accept=".jpg,.jpeg,.png,.pdf" />
+
+  <label for="descricao">Descrição: <span style="color:red">*</span></label>
+  <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+  <button type="submit">Cadastrar Evento</button>
+</form>
+
+<script>
+  // Ajusta o atributo min da data para hoje
+  const dataInput = document.getElementById('dataEvento');
+  const hoje = new Date().toISOString().split('T')[0];
+  dataInput.min = hoje;
+
+  const form = document.getElementById('eventoForm');
+  const erroAreas = document.getElementById('erroAreas');
+
+  form.addEventListener('submit', function(event) {
+    erroAreas.style.display = 'none';
+
+    // Validação checkbox - pelo menos uma área deve estar selecionada
+    const checkboxes = document.querySelectorAll('input[name="areas"]:checked');
+    if (checkboxes.length === 0) {
+      erroAreas.style.display = 'block';
+      event.preventDefault();
+      return;
+    }
+
+    // Validação da data (já tem min, mas reforçar)
+    if (dataInput.value < hoje) {
+      alert('A data do evento não pode ser anterior ao dia atual.');
+      event.preventDefault();
+      return;
+    }
+
+    // Outras validações são feitas automaticamente pelo required nos inputs
+  });
+</script>
+
+</body>
+</html>

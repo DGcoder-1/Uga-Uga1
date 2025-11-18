@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prova CSS — Frontend (nível Médio/Difícil)</title>
+  <!-- Os alunos devem criar um arquivo externo chamado "styles.css" e vinculá-lo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="exam">
+    <header>
+      <h1>Prova de CSS — Estilização e Especificidade</h1>
+      <p>Leia cada questão com atenção. Entregue o arquivo <code>styles.css</code> (externo) no Google sala de aula (Deixe comentado no inicio do arquivo css, os nomes da dupla. )</p>
+    </header>
+
+    <section id="instrucoes">
+      <h2>Instruções gerais</h2>
+      <ul>
+        <li>Use <strong>apenas</strong> um arquivo CSS externo (<code>styles.css</code>).</li>
+        <li>Comente no CSS as partes que correspondem a cada questão (ex.: <code>/* Q1 */</code>).</li>
+        <li>Não altere o HTML fornecido (exceto para adicionar classes/IDs se solicitado por uma questão).</li>
+        <li>Responda a pergunta teórica (Q3.3) diretamente no final do CSS como comentário ou em um arquivo separado.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="q1">
+      <h2>Questão 1 — Estilização de blocos (HTML A)</h2>
+      <p>Considere o seguinte trecho (já presente abaixo). A tarefa é criar regras CSS para atender a cada item.</p>
+
+      <div class="code-sample">
+        <pre>
+        <h1 class="titulos" value="Center">Minha primeira página com estilo</h1> 
+        <h3 class="titulos">Vamos personalizar tudo</h3>
+        <div id="cabecalho">Esta divisão terá informações sobre o sistema</div>
+        <p id="imagens">Este parágrafo será útil para imagens</p>
+        <p> Aqui será um <span>footer</span> com os contatos do site</p>
+        </pre>
+      </div>
+
+      <p><strong>Requisitos:</strong></p>
+      <ol>
+        <li>Adicione cor de fundo <strong>amarela</strong> e altere a cor do texto para <strong>marrom</strong> apenas no elemento <code>p</code> com o ID <code>imagens</code>.</li>
+        <li>Mude a cor de fundo da <code>div com ID cabecalho</code> para <strong>cinza claro</strong> e aumente o tamanho da fonte para <strong>18px</strong>.</li>
+        <li>Altere a cor dos títulos com a classe <code>titulos</code>: <strong>h1</strong> em <strong>vermelho</strong> e <strong>h3</strong> em <strong>azul</strong>. Centralize o texto.</li>
+        <li>Defina espaçamento entre linhas (<code>line-height</code>) de <strong>1.5</strong> para todos os parágrafos (<code>p</code>), <em>exceto</em> o <code>#imagens</code> que foi estilizado no item 1. </li>
+        <li>Comente no CSS: que seletor você usou para garantir que o parágrafo com <code>id="imagens"</code> não receba o <code>line-height:1.5</code>.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section id="q2">
+      <h2>Questão 2 — Estilização de receitas (HTML B)</h2>
+      <p>Use o trecho abaixo e aplique as regras pedidas.</p>
+
+      <div class="code-sample">
+        <pre>
+        <h1 class="titulo">Página de Receitas</h1>
+        <div id="introducao">
+            <p>Bem-vindo ao nosso site de receitas!</p>
+        </div>
+        <div class="receita">
+            <h2 class="titulo">Bolo de Chocolate</h2>
+            <p class="ingrediente">2 xícaras de farinha</p>
+            <p class="ingrediente">1 xícara de açúcar</p>
+            <p class="modo">Misture todos os ingredientes e leve ao forno.</p>
+        </div>
+        <div class="receita">
+            <h2 class="titulo">Panqueca</h2>
+            <p class="ingrediente">1 xícara de leite</p>
+            <p class="ingrediente">1 ovo</p>
+            <p class="modo">Bata tudo no liquidificador e frite na frigideira.</p>
+        </div>
+        <footer>
+            <p>Entre em contato: <span class="email">contato@receitas.com</span></p>
+        </footer>
+        </pre>
+      </div>
+
+      <p><strong>Requisitos:</strong></p>
+      <ol>
+        <li>Adicione uma borda azul de 2px e um fundo cinza claro para a <code>div com ID introducao</code>.</li>
+        <li>Altere a cor do texto de todos os elementos com a classe <code>ingrediente</code> para <strong>verde escuro</strong> e deixe a fonte em <strong>itálico</strong>.</li>
+        <li>Aumente o tamanho da fonte de todos os títulos <code>h2</code> para <strong>24px</strong> e alinhe-os ao centro.</li>
+        <li>Adicione cor de fundo <strong>amarela</strong> a todos os elementos com a classe <code>receita</code>.</li>
+        <li>Defina a fonte geral da página como <strong>Verdana</strong> e aplique cor de texto <code>#444</code> para todos os elementos.</li>
+        <li>Altere a cor da fonte de todos os elementos <code>h2</code> que têm a classe <code>titulo</code> para <strong>marrom escuro</strong>.</li>
+        <li>Deixe o conteúdo da classe <code>email</code> em <strong>azul</strong> e com <strong>sublinhado</strong>.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section id="q3">
+      <h2>Questão 3 — Pseudoclasses, pseudoelementos e especificidade (HTML C)</h2>
+
+      <p>Use os trechos abaixo. Crie um CSS externo (mesmo arquivo) que contenha as regras pedidas.</p>
+
+      <div class="code-sample">
+    <pre>
+    <body>
+        <div class="container">
+            <p class="text-red">Texto com cor vermelha.</p>
+            <p class="text-blue">Texto com cor azul.</p>
+        </div>
+        <a href="#">Link exemplo</a>
+        <div class="intro">Este é um exemplo de uso de pseudoelementos e pseudoclasses em CSS.</div>
+    </body>
+    </pre>
+      </div>
+
+      <ol>
+        <li>Adicione um CSS externo e use seletores de classe para colorir <code>text-red</code> e <code>text-blue</code> adequadamente.</li>
+        <li>Use combinadores: escreva uma regra para <code>.container p</code> e outra para <code>.container > p</code>, explicando brevemente (comentário no CSS) a diferença entre elas.</li>
+        <li>Aplique estilos nas pseudoclasses de link: <code>a:link</code>, <code>a:visited</code>, <code>a:hover</code> e <code>a:active</code> (escolha cores distintas para cada estado e documente no CSS).</li>
+        <li>Use pseudoelementos: estilize a <code>::first-line</code> do <code>.intro</code>, e adicione conteúdo com <code>::before</code> e <code>::after</code> na mesma <code>.intro</code> (por exemplo, um ícone textual ou texto curto).</li>
+      </ol>
+
+      </section>
+
+      <hr>
+
+      <section id="q4">
+
+      <h3>Questão 4 - Especificidade / cascade  (HTML D)</h3>
+      <p>Considere o HTML abaixo:</p>
+    <pre>
+        <div class="cartao" id="apresentacao">
+            <h1 class="titulo">João silva</h1>
+            <p class="descricao">Desenvolvedor Front-End</p>
+            <p class="resumo destaque">Apaixonado em programar</p>
+        </div>
+    </pre>
+
+      <p><strong>Requisitos e perguntas:</strong></p>
+      <ol>
+        <li>Use um seletor de tag para deixar todo <code>p</code> com a cor cinza escuro (<code>#444</code>).</li>
+        <li>Use uma classe <code>.destaque</code> para alterar a cor para azul escuro (<code>#003366</code>).</li>
+        <li>Use um ID <code>apresentacao</code> para mudar a cor dos parágrafos para verde escuro (<code>#006600</code>).</li>
+        <li><strong>Pergunta (responda no CSS como comentário):</strong> Qual cor ficará aplicada em <code><p>class="resumo destaque"</p></code> (ou seja, o elemento com ambas as classes) e por quê? Explique considerando a especificidade e a origem das regras.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section id="entrega">
+      <h2>Entrega e critérios de correção</h2>
+      <ul>
+        <li>Entregar o arquivo <code>prova.html</code> (este se alterar algo nele) e o arquivo <code>styles.css</code> com comentários indicando quais regras atendem cada item.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Boa prova! — Professor</p>
+    </footer>
+  </main>
+</body>
+</html>

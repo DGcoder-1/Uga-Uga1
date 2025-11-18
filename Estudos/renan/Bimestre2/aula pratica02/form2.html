@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="email" name="email" placeholder="Coloque seu email" id="e" />
+        <input type="submit" value="Entrar" />
+       </form>
+       <P></P>
+    <form> 
+    <label for="firstName">Nome:</label>
+    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required minlength="3">
+    <br><br>
+    </form> 
+    <label for="lastName">Sobrenome:</label>
+    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required minlength="3">
+    <br><br>
+
+       <form>
+        <label for="s">Senha:</label>
+        <input type="password" name="senha" placeholder="Coloque sua senha" id="s" /> <br/>
+        <label for="b">Buscar:</label>
+        <input type="search" name="buscar" placeholder="Coloque seu nome" id="b" />
+       </form>
+       <P></P>
+       <form>
+        <label for="t">Digite seu número:</label>
+        <input type="tel" name="telefone" id="t" placeholder="Coloque seu telefone" pattern="[0-9]{5}-[0-9]{4}" required />
+        <input type="submit" value="Entrar" />
+       </form>
+       <P></P>
+       <form>
+        <input type="date" min="2000-01-01" max="2010-12-30" required/>
+        <input type="submit" value="Entrar">
+       </form>
+
+</body>
+</html>

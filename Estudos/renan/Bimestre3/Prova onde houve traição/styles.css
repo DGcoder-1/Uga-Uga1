@@ -1,0 +1,66 @@
+p#imagens{
+
+background-color:yellow;
+color: brown
+
+}
+div#cabecalho{
+    background-color:gray;
+    font-size:18px ;
+}
+h1.titulos{ 
+   color:red;
+   
+
+}
+h3.titulos{
+    color:blue;
+}
+
+p-#imagens{
+    line-height:1.5;
+}
+/* Pensei matematicamente que quando se subtrai, logo vira uma exceção */
+
+div#introducao{
+    border: 10px ;
+    border-color: blue;
+}
+p.ingrediente{
+ color:darkgreen;
+ font-style: italic;
+}
+
+h2.titulo{
+    font-size:24px ;   
+}
+div.receita{
+    background-color: yellow;
+}
+section#q2{
+    font-style:Verdana;
+    color: #444;
+}
+h2.titulo{
+    color:brown
+}
+span.email{
+    color:blue;
+    font-style:underline;
+}
+p.descricao{
+    color:#444;
+}
+p.resumo{
+    color:#444;
+}
+p.destaque{
+    color:#003366
+}
+div#apresentacao{
+    color:#006600
+}
+/*A cor fica um azul, talvez ele dê prioridade ao primeiro nome da classe ou eu não fiz direito :D/*
+
+A propósito se o nome do html está escrito traido, é por terem me traído e terem feito dupla com outro
+eu até que gostei da prova, ensinou bastante, provavelmente esse bimestre fico abaixo da média, mas vou me esforçar pra estudar, e eu pulei a questão 3, valeu, boas férias.
